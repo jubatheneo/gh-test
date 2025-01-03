@@ -127,21 +127,6 @@ paths:
                   error:
                     type: string
                     example: Todo not found
-        '200':
-          description: The deleted to-do task.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Todo'
-        '404':
-          description: To-do task not found.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
 
 components:
   schemas:
