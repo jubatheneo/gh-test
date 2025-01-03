@@ -25,20 +25,20 @@ app.post('/todos', (req, res) => {
 });
 
 // 3. Update a todo
-app.put('/todos/:id', (req, res) => {
-  const { id } = req.params;
-  const { task, completed } = req.body;
+// app.put('/todos/:id', (req, res) => {
+//   const { id } = req.params;
+//   const { task, completed } = req.body;
 
-  const todo = todos.find((t) => t.id === parseInt(id));
-  if (!todo) {
-    return res.status(404).json({ error: 'Todo not found' });
-  }
+//   const todo = todos.find((t) => t.id === parseInt(id));
+//   if (!todo) {
+//     return res.status(404).json({ error: 'Todo not found' });
+//   }
 
-  if (task !== undefined) todo.task = task;
-  if (completed !== undefined) todo.completed = completed;
+//   if (task !== undefined) todo.task = task;
+//   if (completed !== undefined) todo.completed = completed;
 
-  res.json(todo);
-});
+//   res.json(todo);
+// });
 
 // 4. Delete a todo
 app.delete('/todos/danger/:id', (req, res) => {

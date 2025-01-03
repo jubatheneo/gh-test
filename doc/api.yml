@@ -54,46 +54,46 @@ paths:
                   error:
                     type: string
 
-  /todos/{id}:
-    put:
-      summary: Update a todo
-      description: Update an existing to-do task by ID.
-      parameters:
-        - name: id
-          in: path
-          required: true
-          description: ID of the to-do task to update.
-          schema:
-            type: integer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                task:
-                  type: string
-                  example: Master Node.js
-                completed:
-                  type: boolean
-                  example: true
-      responses:
-        '200':
-          description: The updated to-do task.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Todo'
-        '404':
-          description: To-do task not found.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
+  # /todos/{id}:
+  #   put:
+  #     summary: Update a todo
+  #     description: Update an existing to-do task by ID.
+  #     parameters:
+  #       - name: id
+  #         in: path
+  #         required: true
+  #         description: ID of the to-do task to update.
+  #         schema:
+  #           type: integer
+  #     requestBody:
+  #       required: true
+  #       content:
+  #         application/json:
+  #           schema:
+  #             type: object
+  #             properties:
+  #               task:
+  #                 type: string
+  #                 example: Master Node.js
+  #               completed:
+  #                 type: boolean
+  #                 example: true
+  #     responses:
+  #       '200':
+  #         description: The updated to-do task.
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/Todo'
+  #       '404':
+  #         description: To-do task not found.
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: object
+  #               properties:
+  #                 error:
+  #                   type: string
 
   /todos/danger/{id}:
     delete:
@@ -127,21 +127,6 @@ paths:
                   error:
                     type: string
                     example: Todo not found
-        '200':
-          description: The deleted to-do task.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Todo'
-        '404':
-          description: To-do task not found.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
 
 components:
   schemas:
