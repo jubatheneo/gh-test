@@ -95,17 +95,38 @@ paths:
                   error:
                     type: string
 
+  /todos/danger/{id}:
     delete:
       summary: Delete a todo
-      description: Delete an existing to-do task by ID.
+      description: Deletes a todo by its ID.
       parameters:
         - name: id
           in: path
           required: true
-          description: ID of the to-do task to delete.
+          description: The ID of the todo to delete.
           schema:
-            type: integer
+            type: string
       responses:
+        '200':
+          description: Todo deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Todo deleted successfully!
+        '404':
+          description: Todo not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Todo not found
         '200':
           description: The deleted to-do task.
           content:

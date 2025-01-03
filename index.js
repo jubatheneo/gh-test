@@ -41,7 +41,7 @@ app.put('/todos/:id', (req, res) => {
 });
 
 // 4. Delete a todo
-app.delete('/todos/:id', (req, res) => {
+app.delete('/todos/danger/:id', (req, res) => {
   const { id } = req.params;
 
   const index = todos.findIndex((t) => t.id === parseInt(id));
